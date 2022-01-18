@@ -1,0 +1,38 @@
+{
+    "434402922395074560": {
+        "a - name": {
+            "a - name": "Xamfry",
+            "b - admin": true
+        },
+        "b - messeges": 1,
+        "c - swore": 0,
+        "d - user_info": 0,
+        "e - admin_panel": 0,
+        "f - ban": 0,
+        "g - clear": 0,
+        "h - give_role": 0,
+        "i - kick": 0,
+        "j - mute": 0,
+        "k - remove_role": 0,
+        "l - test": 0,
+        "m - unban": 0,
+        "n - unmute": 0,
+        "o - _test": 0
+    },
+    "719959795616186458": {
+        "a - name": {
+            "a - name": "tstvip",
+            "b - admin": false
+        },
+        "b - messeges": 2,
+        "c - swore": 1
+    },
+    "775399278675623996": {
+        "a - name": {
+            "a - name": "\u041a\u0418\u0420\u0418\u0426\u042b SQUAD",
+            "b - admin": false
+        },
+        "b - messeges": 1,
+        "c - swore": 0
+    }
+}

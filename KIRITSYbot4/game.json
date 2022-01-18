@@ -1,0 +1,167 @@
+{
+    "434402922395074560": {
+        "_a - name": "Xamfry",
+        "_card": {
+            "exit": 1,
+            "lose": 1,
+            "use": 7,
+            "win": 0
+        },
+        "_coin": {
+            "lose": {
+                "all": {
+                    "O": 1,
+                    "R": 1,
+                    "a_count": 2
+                }
+            },
+            "use": 6,
+            "win": {
+                "all": {
+                    "O": 3,
+                    "R": 1,
+                    "a_count": 4
+                }
+            }
+        },
+        "_cross_zero": 0,
+        "_random_question": 0,
+        "_rock_paper_scissors": {
+            "lose": {
+                "all": {
+                    "count": 6,
+                    "p/s": 1,
+                    "r/p": 3,
+                    "s/r": 2
+                }
+            },
+            "nothing": {
+                "all": {
+                    "count": 6,
+                    "p/p": 2,
+                    "r/r": 3,
+                    "s/s": 1
+                }
+            },
+            "use": 19,
+            "win": {
+                "all": {
+                    "count": 7,
+                    "p/r": 3,
+                    "r/s": 1,
+                    "s/p": 3
+                }
+            }
+        }
+    },
+    "719959795616186458": {
+        "_a - name": "tstvip",
+        "_card": {
+            "exit": 1,
+            "lose": 0,
+            "use": 2,
+            "win": 0
+        },
+        "_coin": {
+            "lose": {
+                "all": {
+                    "O": 1,
+                    "R": 0,
+                    "a_count": 1
+                }
+            },
+            "use": 1,
+            "win": {
+                "all": {
+                    "O": 0,
+                    "R": 0,
+                    "a_count": 0
+                }
+            }
+        },
+        "_cross_zero": 0,
+        "_random_question": 0,
+        "_rock_paper_scissors": {
+            "lose": {
+                "all": {
+                    "count": 0,
+                    "p/s": 0,
+                    "r/p": 0,
+                    "s/r": 0
+                }
+            },
+            "nothing": {
+                "all": {
+                    "count": 0,
+                    "p/p": 0,
+                    "r/r": 0,
+                    "s/s": 0
+                }
+            },
+            "use": 0,
+            "win": {
+                "all": {
+                    "count": 0,
+                    "p/r": 0,
+                    "r/s": 0,
+                    "s/p": 0
+                }
+            }
+        }
+    },
+    "775399278675623996": {
+        "_a - name": "\u041a\u0418\u0420\u0418\u0426\u042b SQUAD",
+        "_card": {
+            "exit": 0,
+            "lose": 0,
+            "use": 0,
+            "win": 0
+        },
+        "_coin": {
+            "lose": {
+                "all": {
+                    "O": 0,
+                    "R": 0,
+                    "a_count": 0
+                }
+            },
+            "use": 0,
+            "win": {
+                "all": {
+                    "O": 0,
+                    "R": 0,
+                    "a_count": 0
+                }
+            }
+        },
+        "_cross_zero": 0,
+        "_random_question": 0,
+        "_rock_paper_scissors": {
+            "lose": {
+                "all": {
+                    "count": 0,
+                    "p/s": 0,
+                    "r/p": 0,
+                    "s/r": 0
+                }
+            },
+            "nothing": {
+                "all": {
+                    "count": 0,
+                    "p/p": 0,
+                    "r/r": 0,
+                    "s/s": 0
+                }
+            },
+            "use": 0,
+            "win": {
+                "all": {
+                    "count": 0,
+                    "p/r": 0,
+                    "r/s": 0,
+                    "s/p": 0
+                }
+            }
+        }
+    }
+}
