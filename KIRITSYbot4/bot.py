@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 import datetime
 import discord
-import fnmatch
-import os
-import time
 import random
 import json
 from colorama import init, Fore
 from discord.ext import commands
-# <-------------------------------------->
+# подгружаемые функции бота
 from Functions.admin.f_add_word import f_add_word
 from Functions.admin.f_admin_panel import f_admin_panel
 from Functions.admin.f_ban import f_ban
@@ -22,7 +19,7 @@ from Functions.admin.f_test2 import f_test2
 from Functions.admin.f_unban import f_unban
 from Functions.admin.f_unmute import f_unmute
 from Functions.admin.f_user_info import f_user_info
-# <-------------------------------------->
+# подгружаемые списки
 from Spiski.bad_words import *
 from Spiski.coin_list import *
 from Spiski.InfoCity_Ru import *
@@ -33,15 +30,19 @@ from Spiski.config import *
 from Spiski.white_list import *
 from Spiski.translate_list import *
 
+# доступ функций discord.api для бота
 client = commands.Bot(intents=discord.Intents.all(), command_prefix='!')
 client.remove_command("help")
 
 
+# on_message - реакция и действия после сообщения
 @client.event
 async def on_message(message):
     init(autoreset=True)
     now = datetime.datetime.now()
     await client.process_commands(message)
+
+    # создание json для админов (расширенная статистика)
     if message.author.name in white_list:
         with open('users.json', 'r', encoding='UTF-8') as file:
             users = json.load(file)
@@ -129,7 +130,9 @@ async def on_message(message):
 
         with open('game.json', 'r', encoding='UTF-8') as file:
             users = json.load(file)
-    else:
+
+    # создание json для простых пользователей
+    else: 
         with open('users.json', 'r', encoding='UTF-8') as file:
             users = json.load(file)
 
@@ -170,6 +173,7 @@ async def on_message(message):
             users = json.load(file)
 
 
+    # создания json для статистики игр
     async def update_game_data(users, user):
         if not user in users:
             users[user] = {}
@@ -417,10 +421,12 @@ async def on_message(message):
     with open('game.json', 'w', encoding='UTF-8') as file:
         json.dump(users, file, indent=4, sort_keys=True)
 
+
     if message.author.id != BOT:
         print(now.strftime(
             "%d-%m-%Y %H:%M:%S") + " - " + "Сообщение на канале '{0.channel}' от {0.author}: {0.content}".format(
             message))
+
 
     msg = message.content.lower()
     banned_list = msg.split(" ")
@@ -468,7 +474,8 @@ async def on_message(message):
     # <------------парсеры--------------->
 
     # <----------games channel----------->
-    # card21
+    
+    # card21  WORK
     if message.channel.id == CARD_21:
         if message.content.startswith('_card'):
             async def card():
@@ -541,7 +548,7 @@ async def on_message(message):
 
             await card()
 
-    # coin
+    # coin WORK
     if message.channel.id == COIN:
         if message.content.startswith('_coin'):
             async def coin():
@@ -609,7 +616,7 @@ async def on_message(message):
 
             await coin()
 
-    # random-question
+    # random-question WORK+-
     if message.channel.id == RANDOM_QUESTION:
         if message.content.startswith('_random_question'):
             async def random_question(message):
@@ -676,9 +683,9 @@ async def on_message(message):
                 if rel == '1':
                     await random_question(message)
                 elif rel == '2':
-                    return
+                    pass
                 else:
-                    return
+                    pass
                 with open('game.json', 'r', encoding='UTF-8') as file:
                     users = json.load(file)
 
@@ -691,7 +698,7 @@ async def on_message(message):
 
             await random_question(message)
 
-    # cross_zero
+    # cross_zero NOT WORK
     if message.channel.id == CROSS_ZERO:
         if message.content.startswith('_cross_zero'):
             async def cross_zero():
@@ -769,7 +776,7 @@ async def on_message(message):
 
             await cross_zero()
 
-    # rock-paper-scissors
+    # rock-paper-scissors WORK
     if message.channel.id == ROCK_PAPER_SCISSORS:
         if message.content.startswith('_rock_paper_scissors'):
             async def rock_paper_scissors():
@@ -920,21 +927,9 @@ async def on_message(message):
 @client.event
 async def on_ready():
     init(autoreset=True)
-    tic1_1 = time.perf_counter()
     now = datetime.datetime.now()
     print(Fore.GREEN + now.strftime("%d-%m-%Y %H:%M:%S") + f' Бот готов:)')
     await client.change_presence(status=discord.Status.online, activity=discord.Game('!help'))
-    tic1_2 = time.perf_counter()
-    print(Fore.GREEN + f"Загрузка бота заняла {tic1_2 - tic1_1:0.4f} секунд\n")
-
-    for file in os.listdir("Functions/admin"):
-        if fnmatch.fnmatch(file, '*.py'):
-            print(Fore.GREEN + f'Функция {file} загружена')
-            time.sleep(0.01)
-    print(Fore.GREEN + f"Загрузка функций админа закончена\n")
-
-    tic1_3 = time.perf_counter()
-    print(Fore.GREEN + f"Загрузка функций и бота заняла {tic1_3 - tic1_1:0.4f} секунд\n")
 
     print(Fore.YELLOW + f'<------Список участников:------>\n|')
     for guild in client.guilds:
@@ -943,6 +938,7 @@ async def on_ready():
         print(Fore.YELLOW + f'|\n<------Конец------>\n')
 
 
+#обработка ошибок
 @client.event
 async def on_command_error(ctx, error):
     # Основные ошибки:
