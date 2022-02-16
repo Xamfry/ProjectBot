@@ -940,7 +940,7 @@ async def on_ready():
         print(Fore.YELLOW + f'|\n<------Конец------>\n')
 
 
-#обработка ошибок
+# обработка ошибок
 @client.event
 async def on_command_error(ctx, error):
     # Основные ошибки:
